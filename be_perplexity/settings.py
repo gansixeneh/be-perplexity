@@ -55,6 +55,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3001',
+    'http://fe-perplexity.muflih-gansix.com',
 ]
 ROOT_URLCONF = 'be_perplexity.urls'
 
