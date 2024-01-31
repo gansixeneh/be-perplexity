@@ -21,6 +21,10 @@ class ThreadDetailViewSet(viewsets.ModelViewSet):
         param_id = request.GET.get('id')
 
         if param_id:
+            discover_thread = DiscoverThread.objects.get(id=param_id)
+            discover_thread.views = discover_thread.views + 1
+            discover_thread.save()
+
             instance = get_object_or_404(self.queryset, id=param_id)
             serializer = self.serializer_class(instance)
             return Response(serializer.data)
